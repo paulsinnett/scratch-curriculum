@@ -34,4 +34,4 @@ When [left arrow v] key pressed
 
 Change x by (-10)
 
-Use this code to make the sprite move to the right:
+Use this code to make the sprite move to the right: hi
