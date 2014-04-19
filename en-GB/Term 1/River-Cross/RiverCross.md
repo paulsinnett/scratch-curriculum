@@ -10,7 +10,7 @@ Step 1 : Create your character and logs
 
 1. Start a new project
 
-2.  First delete elete the Scratch cat , and import / draw a character .  
+2.  First delete the Scratch cat , and import / draw a character .  
 
 3.  Import / draw your own background. This will be the background which your 
     character will fall into if they miss the log. 
@@ -19,20 +19,25 @@ Step 1 : Create your character and logs
    Make one log then duplicate the rectangle's 5 times. 
  
 
-Step 3: Draw a background, this could be a water background like the classic Frogger 
+Step 2 : Making the frog move 
 
-games, or you use your own ideas like your character is avoiding lava in a volcano. 
-
-Step 4 : Time to start programming! On your character sprite use this coding to make the 
-
-character move, this script will make the character move to the left when the left arrow key is 
-
-clicked. 
+1. We want the character to be controlled by the arrow keys to move. Use this 
+   script to make the character move to the left: 
 
 When [left arrow v] key pressed 
 Change x by (-10)
 
-Use this code to make the sprite move to the right: 
+2. Now you can use this script to make the character move to the right: 
 
 When [right arrow v] key pressed 
 Change x by (10)
+
+3. We also want the character to jump forward,onto the logs, so use this script:
+
+When[space v] key pressed 
+play sound [Pop 1 v]
+move (75) steps 
+
+You can use any sound effect when your character jumps!
+
+4. Finally use this script so your character can move backwards: 
