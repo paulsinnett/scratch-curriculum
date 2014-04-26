@@ -41,3 +41,11 @@ move (75) steps
 You can use any sound effect when your character jumps!
 
 4. Finally use this script so your character can move backwards: 
+
+When [down arrow v]key pressed 
+if <not <touching color [#00ff00] > > then
+move (-75) steps 
+
+The green colour can be replaced with the colour floor your character starts the game on. 
+
+Test your project! Does your character move forward , back , left and right?
