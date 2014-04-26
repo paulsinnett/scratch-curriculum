@@ -49,3 +49,7 @@ move (-75) steps
 The green colour can be replaced with the colour floor your character starts the game on. 
 
 Test your project! Does your character move forward , back , left and right?
+
+Step 3 : Create your background
+
+1. Our character need a background when they are jumping on the logs , start by using the paint fill tool to colour the whole background , 
