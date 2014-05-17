@@ -52,4 +52,7 @@ Test your project! Does your character move forward , back , left and right?
 
 Step 3 : Create your background
 
-1. Our character need a background when they are jumping on the logs , start by using the paint fill tool to colour the whole background , 
+1. Our character need a background when they are jumping on the logs , start by using the paint fill tool to colour the whole background , you can use any colour you want. 
+2. Use the rectangle shape tool, to draw the land your character, and fill the rectangle in. 
+3. On your character script page, find the script that moves your character backwards, change the touching colour to the floor colour your character starts on. 
+4. Lastly add some waves on to your background. 
