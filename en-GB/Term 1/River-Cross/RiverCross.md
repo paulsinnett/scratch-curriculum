@@ -16,7 +16,7 @@ Step 1 : Create your character and logs
     character will fall into if they miss the log. 
 
 4. Draw 6 rectangles, these will be the ‘logs’ which your character will be hopping on. 
-   Make one log then duplicate the rectangle's 5 times. 
+   Make one log then duplicate the rectangle's 5 times. Give each log a name , Log 1 , Log 2 etc.
  
 
 Step 2 : Making the frog move 
@@ -56,3 +56,18 @@ Step 3 : Create your background
 2. Use the rectangle shape tool, to draw the land your character, and fill the rectangle in. 
 3. On your character script page, find the script that moves your character backwards, change the touching colour to the floor colour your character starts on. 
 4. Lastly add some waves on to your background. 
+
+Step 4: Programming the logs 
+
+1. Now we are going t programme the logs which your character will be hopping on to cross the river. On Log 1's script page make this script:
+when flag clicked  
+go to x:(0)y:(-75)
+repeat until < (x position) > (280) >
+change  x  by(2)
+end
+forever
+go to x:(-300)y:(-75)
+repeat until< (x position) > (280) >
+change  x  by (2)
+2. Also make this script for Log 2 
+Test your project: Does Log 1 and 2 both move in a 'right' direction. 
