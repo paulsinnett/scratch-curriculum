@@ -87,7 +87,9 @@ repeat until<(x position) < [-280] >
 change x by (-2) 
 
 Check that your logs 3 and 4 are moving in the left direction.
+
 4. Finally make this script for logs 5 and 6:
+
 when flag clicked 
 go to x:(15) y:(87)
 repeat until < (x position) < [280] >
