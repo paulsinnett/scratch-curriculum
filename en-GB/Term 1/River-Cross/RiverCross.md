@@ -10,7 +10,7 @@ Step 1 : Create your character and logs
 
 1. Start a new project
 
-2.  First delete the Scratch cat , and import / draw a character .  
+2.  First delete the Scratch cat , and import / draw a character.  If you want it to be a classic Frogger style game you can       use a Frog. 
 
 3.  Import / draw your own background. This will be the background which your 
     character will fall into if they miss the log. 
@@ -100,4 +100,7 @@ go to x: (15) y:(87)
 repeat until<(x position) < [280] >
 change x by (2) 
 
+Step 5: We want a goal for our character to reach after jumping on the series of logs, so we need to create a item / place
+for our character tio reach. You can create your own area / object for your character to reach or follow these instructions 
+to make a lillypad. 
 
