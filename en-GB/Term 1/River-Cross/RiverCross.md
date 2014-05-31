@@ -60,6 +60,7 @@ Step 3 : Create your background
 Step 4: Programming the logs 
 
 1. Now we are going t programme the logs which your character will be hopping on to cross the river. On Log 1's script page make this script:
+
 when flag clicked  
 go to x:(0)y:(-75)
 repeat until < (x position) > (280) >
@@ -69,5 +70,32 @@ forever
 go to x:(-300)y:(-75)
 repeat until< (x position) > (280) >
 change  x  by (2)
+
 2. Also make this script for Log 2 
 Test your project: Does Log 1 and 2 both move in a 'right' direction. 
+
+3. Now make this script for Logs 3 and 4 : 
+
+when flag clicked 
+go to x:(132) y:(2)
+repeat until < (x position) < [-280] >
+change x by (-2)
+end 
+forever
+go to x: (137) y:(2)
+repeat until<(x position) < [-280] >
+change x by (-2) 
+
+Check that your logs 3 and 4 are moving in the left direction.
+4. Finally make this script for logs 5 and 6:
+when flag clicked 
+go to x:(15) y:(87)
+repeat until < (x position) < [280] >
+change x by (2)
+end 
+forever
+go to x: (15) y:(87)
+repeat until<(x position) < [280] >
+change x by (2) 
+
+
