@@ -59,7 +59,7 @@ Step 3 : Create your background
 
 Step 4: Programming the logs 
 
-1. Now we are going t programme the logs which your character will be hopping on to cross the river. On Log 1's script page make this script:
+1. Now we are going to programme the logs which your character will be hopping on to cross the river. On Log 1's script page make this script:
 
 when flag clicked  
 go to x:(0)y:(-75)
