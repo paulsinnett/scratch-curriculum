@@ -1,230 +1,233 @@
-Nivel 1
+---
+title: Fuegos Artificiales
+level: Nivel 1
+language: es-ES
+stylesheet: scratch
+embeds: "*.png"
+note: "notas para coordinadores.md"
+materials: ["*.sb2", "Resources/*.wav", "Resources/*.png"]
+...
 
-#Fuegos artificiales
+# Introducción { .intro }
 
-__Introducción:__
-En este proyecto vamos a crear una exhibición de fuegos artificiales sobre la ciudad.
+En este proyecto crearemos un espectáculo de fuegos artificiales sobre una ciudad.
 
-##PASO 1: Crea un cohete que vuela hacia el ratón
+![screenshot](fireworks_screenshot.png)
 
-__Primero, importemos las imágenes que vamos a necesitar__
+#PASO 1: Crea un cohete que vuele hacia el ratón { .activity }
 
-1. Crea un proyecto de Scratch nuevo. Borra el objeto gato pinchando en él con el botón derecho y pinchando en 'borrar'.
-2. Cambia el fondo del escenario a 'outdoor/city-with-water'.
-3. Pincha el botón __Escoger un nuevo objeto desde archivo__ para añadir un cohete al proyecto (usa el disfraz 'rocket.png').
-4. Haz que el cohete se esconda cuando se pincha en la bandera verde.
+Vamos a importar las imágenes que necesitaremos para el juego
 
-Ahora queremos que el cohete se mueva hacia el ratón cuando pulses el botón del ratón.
+## Progreso { .check }
 
-5. Añade un bloque de control cuando se pulsa la barra espaciadora, haciendo que el cohete aparezca y se deslice hacia el ratón:
++ Empieza un nuevo proyecto Scratch. Borra el gato haciendo click con el botón derecho y pulsando **Borrar**. 
++ Cambia el fondo por **outdoor/city-with-water**
++ Usa el botón `Cargar objeto desde archivo` {.blockgrey} para añadir un objeto Cohete en el proyecto (usa el disfraz **Resources/rocket.png**).
++ Haz que el cohete se esconda al pulsar la bandera verde. 
+```blocks
 
-```scratch
-
-	al presionar BANDERA
-
+	Al presionar BANDERA VERDE
 	esconder
-
-	
-	al presionar tecla espacio
-	mostrar
-	deslizar en 1 segs a x: x del raton y: y del ratón
+```
++ Ahora queremos que el cohete se mueva hacia el ratón cuando se haga click. Añade un bloque de control `al presionar tecla espacio`, y dentro, haz que el cohete apareza y se deslice hacia la posición del ratón.
+```blocks
+	al presionar tecla [espacio v]
+		mostrar
+		deslizar en (1) segs a x: (posición x del ratón) y: (posición y del ratón)
 ```
 		
-###Prueba tu proyecto
-__Pincha en la bandera verde, pon el puntero del ratón sobre el escenario y pulsa la barra espaciadora.__
+##Prueba tu proyecto { .flag }
 
-¿Aparece el cohete y se mueve hacia el puntero del ratón?
-¿Qué pasa si mueves el ratón y vuelves a pulsar la barra espaciadora?
+Pulsa la bandera verde, pon el ratón en el escenario y pulsa la tecla espacio.
 
-6. Los cohetes de verdad no vuelan de lado a lado, así que vamos a hacer que se deslice hacia el puntero del ratón desde el pie del escenario. Antes de mostrar el cohete, usamos un bloque 'ir a' para decirle que se mueva más abajo del pie del escenario, aún manteniendo su posición horizontal.
++ ¿Aparece el cohete y se mueve hasta el ratón?
++ ¿Qué pasa si mueves el ratón a otra posición y pulsas espacio otra vez?
 
-```scratch
+## Progreso { .check }
 
-	al presionar BANDERA
-
-	esconder
-
-	
-	al presionar tecla espacio
-	ir a x: x del ratón y: -200
-	mostrar
-	deslizar en 1 segs a x: x del ratón y: y del ratón
-```
-
-###Prueba tu proyecto
-__Pincha en la bandera verde, pon el puntero del ratón sobre el escenario y pulsa la barra espaciadora.__ 
-¿Vuela el cohete hacia el ratón desde la parte inferior de la pantalla? ¿Qué pasa si mueves el ratón y vuelves a pulsar la barra espaciadora?
-
-7. Finalmente, vamos a hacer que el cohete se lance al pulsar el botón del ratón en vez de la barra espaciadora. Para lograrlo, vamos a envolver nuestro programa en un bloque 'por siempre si ¿ratón presionado?'.
-Después reemplaza el bloque __al presionar tecla espacio__ por un __al presionar BANDERA__ y asegúrate de que el cohete esté escondido al principio.
-
-```scratch
-
-	al presionar BANDERA
-	esconder
-	por siempre si ¿ratón presionado?
-		ir a x: x del ratón y: -200
-		mostrar
-		deslizar en 1 segs a x: x del ratón y: y del ratón
-	(fin por siempre)
-```
-###Prueba tu proyecto
-__Pincha en la bandera verde, y luego pincha con el ratón en el escenario. Pincha en diferentes partes del escenario.__ 
-
-###Cosas para probar
-1. Prueba a cambiar dónde se posiciona el cohete antes de deslizarse hacia el ratón, para que se mueva trazando un arco.
-2. Crea varios cohetes con diferentes velocidades.
-
-Guarda tu proyecto.
-
-##PASO 2: Haz que el cohete explote
-
-1. El primer paso para hacer que explote es que toque el sonido 'Resources/bang' antes de empezar a moverse, y luego se esconda al alcanzar el puntero del ratón. Para importar el sonido usa el botón 'Importar' en la pestaña de 'Sonidos'.
-
-```scratch
-
-	al presionar BANDERA
-	esconder
-	por siempre si ¿ratón presionado?
-		ir a x: x del ratón y: -200
-		tocar sonido bang
-		mostrar
-		deslizar en 1 segs a x: x del ratón y: y del ratón
++ Los fuegos artificiales normalmente no vuelan de un lado a otro: Suben en línea recta. Vamos a asegurarnos de que el cohete siempre vuela hacia el ratón desde la parte de abajo de la pantalla. Antes de mostrar el cohete, usa el bloque `ir a` para hacer que se mueva hasta la parte de abajo, pero se quede en la misma posición horizontal. 
+```blocks
+	Al presionar BANDERA VERDE
 		esconder
-	(fin por siempre)
-```
-2. Después haz que el cohete envíe un nuevo mensaje al explotar. Más tarde usaremos este mensaje.
 
-```scratch
-
-	al presionar BANDERA
-	esconder
-	por siempre si ¿ratón presionado?
-		ir a x: x del ratón y: -200
-		tocar sonido bang
+	al presionar tecla [espacio v]
+		ir a x: (posición x del ratón) y: (-200)
 		mostrar
-		deslizar en 1 segs a x: x del ratón y: y del ratón
+		deslizar en (1) segs a x: (posición x del ratón) y: (posición y del ratón)
+```
+
+##Prueba tu proyecto { .flag }
+
+Pulsa la bandera verde, pon el ratón en el escenario y pulsa la tecla espacio.
+
++ ¿Vuela el cohete hacia el ratón desde la parte de abajo de la pantalla? 
++ ¿Qué pasa si mueves el ratón a otra posición y pulsas espacio otra vez?
+
+## Progreso { .check }
+
++ Ahora vamos a disparar los cohetes con el ratón, en vez de usando la tecla espacio. Para eso, podemos envolver nuestro programa en un bloque `por siempre si ratón presionado`. Después, cambia el bloque `al presionar tecla espacio` por un bloque `Al presionar BANDERA VERDE` . Por último, asegúrate de que el cohete se esconde cuando empieza el juego.
+```blocks
+	Al presionar BANDERA VERDE
 		esconder
-		enviar a todos explota
-	(fin por siempre)
-
+		por siempre 
+			si <¿ratón presionado?> entonces
+				ir a x: (posición x del ratón) y: (-200)
+				mostrar
+				deslizar en (1) segs a x: (posición x del ratón) y: (posición y del ratón)
 ```
-###Prueba tu proyecto
-__Pincha en la bandera verde.__ 
-Confirma que el cohete toca el sonido y se esconde al alcanzar el puntero del ratón.
+## Prueba tu proyecto { .flag }
 
-3. Importa un nuevo objecto usando el disfraz 'Resources/firework1.png'.
-4. Cuando recibe el mensaje 'explota', este objeto debe esconderse y moverse a la posición del cohete usando un bloque 'ir a', mostrarse, y desaparecer otra vez después de un segundo.
+Pulsa la bandera verde y haz click con el botón del ratón sobre el escenario. Haz click otra vez en otro sitio.
 
-```scratch
+## Cosas para probar { .try }
 
-	al recibir explota
++ Haz que unos cohetes vayan más deprisa o más despacio que otros.
++ Intenta cambiar a dónde se mueve el cohete antes de dispararse hacia el ratón, para que haga una pequeña curva mientras vuela.
 
-	esconder
+## Guarda tu proyecto { .save }
 
-	ir a x: posición en x de cohete y: posición en y de cohete
+# PASO 2: Hacer que el cohete explote { .activity }
 
-	mostrar
+## Progreso { .check }
 
-	esperar 1 segundos
-
-	esconder
-```
-###Prueba tu proyecto
-__Lanza otro cohete.__ 
-Cuando el cohete explota, ¿desaparece el cohete y aparece la imagen de la explosión?
-¿Qué ocurre si mantienes el botón del ratón presionado mientras mueves el ratón? (No te preocupes, arreglaremos este problema más tarde).
-
-Guarda tu proyecto
-
-##PASO 3: Haz que cada explosión sea distinta
-
-1. Ahora podemos hacer que cada explosión sea única usando el bloque 'fijar efecto color', eligiendo un número al azar entre el 1 y el 200, antes de mostrar cada explosión.
-
-```scratch
-
-	al recibir explota
-
-	esconder
-	
-	fijar efecto color a número al azar entre 1 y 200
-
-	ir a x: posición en x de cohete y: posición en y de cohete
-
-	mostrar
-
-	esperar 1 segundos
-
-	esconder
++ El primer paso para hacer que el cohete explote es que reproduza el sonido 'bang' (**Resources/bang.wav**) antes de empezar a moverse. Después, tiene que desaparecer cuando llega a la posición del ratón. Para importar un sonido nuevo ve a la pestaña Sonidos y haz click en el botón `Cargar sonido desde archivo` {.blockgrey}.
+```blocks
+	Al presionar BANDERA VERDE
+		esconder
+		por siempre 
+			si <¿ratón presionado?> entonces
+				ir a x: (posición x del ratón) y: (-200)
+				tocar sonido [bang v]
+				mostrar
+				deslizar en (1) segs a x: (posición x del ratón) y: (posición y del ratón)
+				esconder
 ```
 
-###Prueba tu proyecto
-__Pincha en la bandera verde.__ 
-
-¿Es cada explosión de un color distinto?
-
-2. Vamos a añadir varios tipos de explosión distintos, usando los disfraces 'Resources/firework2.png' y 'Resources/firework3.png', intercambiando entre ellos en cada cohete, de nuevo antes de mostrar cada explosión.
-
-###Prueba tu proyecto
-__Pincha en la bandera verde.__ 
-
-¿Muestra cada cohete una explosión distinta?
-
-3. Finalmente, hagamos que cada explosión crezca después de aparecer. En vez de esperar un segundo, fija el tamaño del objeto al 5% antes de mostrarlo, y una vez que lo has mostrado, incrementa el tamaño un 2% cincuenta veces, usando un bloque 'repetir'.
-
-```scratch
-
-	al recibir explota
-
-	esconder
-	
-	fijar efecto color a número al azar entre 1 y 200
-
-	ir a x: posición en x de cohete y: posición en y de cohete
-
-	fijar tamaño a 5%
-	
-	mostrar
-
-	repetir 50
-		cambiar tamaño por 2
-	(fin repetir)
-
-	esconder
++ Ahora, haz que el cohete envíe un mensaje cuando explota. Haremos algo con ese mensaje después (recibirlo)
+```blocks
+	Al presionar BANDERA VERDE
+		esconder
+		por siempre 
+			si <¿ratón presionado?> entonces
+				ir a x: (posición x del ratón) y: (-200)
+				tocar sonido [bang v]
+				mostrar
+				deslizar en (1) segs a x: (posición x del ratón) y: (posición y del ratón)
+				esconder
+				enviar [explotar v]
 ```
-###Prueba tu proyecto
-__Pincha en la bandera verde.__ 
 
-¿Comienza la explosión pequeña en el centro del cohete y se expande lentamente?
+## Prueba tu proyecto { .flag }
 
-###Cosas para probar
-Puedes intentar hacer que cada explosión sea más única cambiando su tamaño y velocidad de expansión.
+Pulsa la bandera verde. Comprueba que el cohete hace ruido y se esconde cuando llega a la posición del ratón. 
 
-Guarda tu proyecto
+## Progreso { .check }
 
-##PASO 4: Arreglando el error en el envío del mensaje
-¿Recuerdas cómo había un problema antes cuando mantenías presionado el botón del ratón?
-La causa es que después de enviar el mensaje 'explota', el cohete vuelve a repetir el bloque 'por siempre si', mandando otro mensaje 'explota' antes de que el anterior haya acabado de actuar.
-
-
-1. Para solucionar este problema, podemos reemplazar el bloque 'enviar a todos' con uno 'enviar a todos y esperar'. De esta manera, le ciclo no se repite hasta que la explosión haya acabado.
-
-```scratch
-
-	al presionar BANDERA
-	esconder
-	por siempre si ¿ratón presionado?
-		ir a x: x del ratón y: -200
-		tocar sonido bang
++ Crea un nuevo objeto desde un fichero, **Recursos/firework1.png**
++ Cuando reciba el mensaje explotar, debería esconderse y moverse hacia la posición del cohete usando un bloque ir a, aparecer y desaparecer un segundo después.
+```blocks
+	al recibir [explotar v]
+		esconder
+		ir a [cohete v]
 		mostrar
-		deslizar en 1 segs a x: x del ratón y: y del ratón
+		esperar (1) segs
 		esconder
-		enviar a todos explota y esperar
-	(fin por siempre)
 ```
-###Prueba tu proyecto
-__Pincha en la bandera verde, mantén presionado el botón del ratón y mueve el ratón por el escenario.__ 
 
-¿Aparece cada explosión en el lugar y momento correcto?
+## Prueba tu proyecto { .flag }
 
-Guarda tu proyecto
+¡Lanza un nuevo cohete!.
+
++ ¿Aparece el dibujo de la explosión cuando el cohete explota?
++ ¿Qué pasa si arrastras el ratón con el botón pulsado? (No te preocupes, arreglaremos esto en un rato).
+
+## Guarda tu proyecto { .save }
+
+# PASO 3: Haz que cada explosión sea única { .activity }
+
++ Ahora queremos que cada explosión sea única, usando el bloque `establecer efecto color` {.blockpurple }, y haciendo que elija un color al azar entre **1** y **200** antes de mostrarse.
+```blocks
+	al recibir [explotar v]
+		esconder
+		establecer efecto [color v] a (número al azar entre (1) y (200))
+		ir a [cohete v]
+		mostrar
+		esperar (1) segs
+		esconder
+	
+```
+
+## Prueba tu proyecto { .flag }
+
+Pulsa la bandera verde. ¿Tiene cada explosión un color diferente?
+
+## Progreso { .check }
+
++ Vamos a usar los disfraces para añadir más tipos de explosiones, usando **Recursos/firework2.png** y **Recursos/firework3.png**, y cambiando entre ellas para cada cohete antes de mostrarlas. 
+
+## Prueba tu proyecto { .flag }
+
+¡Lanza un cohete! 
+
+¿Explota cada cohete de una manera distinta?
+
+## Progreso { .check }
+
++ Por último, vamos a a hacer que la explosión se haga más grande después de que el cohete explote! En vez de esperar un segundo, pon el tamaño del objeto a **5%** antes de mostrarlo y luego, cuando lo muestras, aumenta el tamaño por **2 cincuenta veces**, usando un bloque `repetir` { .blockorange }.
+```blocks
+	al recibir [explotar v]
+		esconder
+		establecer efecto [color v] a (número al azar entre (1) y (200))
+		ir a [cohete v]
+		mostrar
+		fijar tamaño a (5) %
+		repetir (50)
+			cambiar tamaño por (2)
+		fin
+		esconder
+	
+```
+
+## Prueba tu proyecto { .flag }
+
+Pulsa la bandera verde. 
+
++ ¿Crece el gráfico de la explosión desde el centro hacia afuera poco a poco?
+
+## Cosas para probar { .try }
+
++ Intenta hacer cada explosión todavía más distinta cambiando el tamaño y la velocidad de la explosión. 
+
+## Guarda tu proyecto { .save }
+
+# PASO 4: Arreglando el problema de la señal explotar { .activity }
+
+¿Te acuerdas de que antes vimos un fallo (__bug__) cuando el botón del ratón se quedaba pulsado?
+Esto pasa porque cuando el cohete envía la señal de su explosión, inmediatamente va a repetir el bucle "si" y mover el cohete a la parte de abajo del escenario.  Y esto pasa __antes__ de que la explosión se mueva a la posición del cohete. 
+
+## Progreso { .check }
+
++ Para arreglarlo, podemos reemplazar el bloque enviar con un bloque enviar y `esperar`. Así, el bucle no se repetirá hasta que el objeto explosión termine de explotar.
+```blocks
+	Al presionar BANDERA VERDE
+		esconder
+		por siempre 
+			si <¿ratón presionado?> entonces
+				ir a x: (posición x del ratón) y: (-200)
+				tocar sonido [bang v]
+				mostrar
+				deslizar en (1) segs a x: (posición x del ratón) y: (posición y del ratón)
+				esconder
+				enviar [explotar v] y esperar
+```
+## Prueba tu proyecto { .flag }
+
+Pulsa la bandera verde y mueve el ratón por el escenario mientras mantienes apretado el botón.
+
++ ¿Aparece ahora la explosión en el sitio adecuado y en el momento correcto?
+
+## Guarda tu proyecto { .save }
+
+¡Bien hecho, has acabado! Ahora ¡Disfruta de tu juego!
+
+No olvides que puedes compartir el juego con tu familia y amigos pulsando el botón **Compartir** en la barra de herramientas.
