@@ -1,49 +1,41 @@
 {
-    "id": "scratch",
-    "title":"Scratch",
-    "description":"",
+    "description": false,
+    "id": "scratch_01",
     "language": "pl-PL",
     "number": 1,
-
-
+    "title": "Scratch 1",
+    "category": "cat-scratch",
     "projects": [
         {
-            "filename": "01 Feliks i Herbert/Feliks i Herbert.md",
-            "number": 1
+            "number":   1,
+            "filename": "Kapela rockowa/Kapela rockowa.md",
+            "note":     "Kapela rockowa/Kapela rockowa - notatki.md"
         },
         {
-            "filename": "02 Pogromcy duchow/Pogromcy duchow.md",
-            "number": 2
+            "number":   2,
+            "filename": "Zagubiona w kosmosie/Zagubiona w kosmosie.md",
+            "note":     "Zagubiona w kosmosie/Zagubiona w kosmosie - notatki.md"
         },
         {
-            "filename": "03 Fajerwerki/Fajerwerki.md",
-            "number": 3
+            "number":   3,
+            "beta":     true,
+            "filename": "Pogromcy duchów/Pogromcy duchów.md",
+            "note":     "Pogromcy duchów/Pogromcy duchów - notatki.md"
         },
         {
-            "filename": "04 Jednoreki bandyta/Jednoreki bandyta.md",
-            "number": 4
+            "number":   4,
+            "filename": "Robot Gaduła/Robot Gaduła.md",
+            "note":     "Robot Gaduła/Robot Gaduła - notatki.md"
         },
         {
-            "filename": "05 Glodna ryba/Glodna ryba.md",
-            "number": 5
+            "number":   5,
+            "filename": "Kolorowe kredki/Kolorowe kredki.md",
+            "note":     "Kolorowe kredki/Kolorowe kredki - notatki.md"
         },
         {
             "number":   6,
-            "filename": "06 Pustynny wyscig/06 Pustynny Wyscig.md",
-            "note":     "06 Pustynny wyscig/06 Pustynny Wyscig - Informacje.md"
-        },
-        {
-            "filename": "07 Co to jest/Co to jest.md",
-            "number": 7
-        },
-        {
-            "filename": "08 Kolorowe kredki/Kolorowe kredki.md",
-            "number": 8
-        },
-        {
-            "filename": "09 Stworz wlasna gre/StworzWlasnaGre.md",
-            "number": 9
+            "filename": "Wyścig Łodzi/Wyścig Łodzi.md",
+            "note":     "Wyścig Łodzi/Wyścig Łodzi - notatki.md"
         }
     ]
 }
-
